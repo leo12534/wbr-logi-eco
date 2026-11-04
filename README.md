@@ -20,7 +20,8 @@ wbr-logi-eco/
 │   └── homepage.html          site-wide HTML blocks, as built on the rebrand site
 ├── events/
 │   └── 1006035-logipharma-eu/
-│       └── 1006035.css        LogiPharma EU's values
+│       ├── 1006035.css        LogiPharma EU's values
+│       └── homepage.html      LogiPharma EU's homepage, kept in case it has blocks the rebrand site doesn't
 └── shell/
     └── style.css              the CMS's shared shell; reference only
 ```
@@ -29,11 +30,13 @@ wbr-logi-eco/
 | --- | --- |
 | `rebrand/logi.css` | `/UploadedFiles/EventPage/brands/logi/logi.css` |
 | `rebrand/1006033.css` | `/UploadedFiles/EventPage/1006033/1006033.css` |
-| `rebrand/homepage.html` | Homepage content inside `#sb-page-content` on the rebrand site |
+| `rebrand/homepage.html`, `events/<id>-<event>/homepage.html` | Homepage content inside `#sb-page-content` |
 | `events/<id>-<event>/<id>.css` | `/UploadedFiles/EventPage/<id>/<id>.css` |
 | `shell/style.css` | `/WBR/CSS/events/style.css` |
 
-`homepage.html` was captured from the rendered page, so it includes markup the CMS adds when it renders modules, such as speaker listings and sponsor logos.
+An event's `homepage.html` is kept in case that event has a block the rebrand site doesn't have yet. Once that block is added to the rebrand site, it belongs in `rebrand/homepage.html`.
+
+Each `homepage.html` was captured from the rendered page, so it includes markup the CMS adds when it renders modules, such as speaker listings and sponsor logos.
 
 ## Adding a LOGI event
 

@@ -8,6 +8,7 @@ Working copies of the LOGI brand's ECO Admin (CMS) files. This repo mirrors what
 
 - `rebrand/` mirrors the rebrand site, logirebrand.wbresearch.com (event `1006033`). Brand changes happen here: `rebrand/logi.css` and new site-wide HTML blocks in `rebrand/homepage.html`.
 - `events/<id>-<event>/<id>.css` holds one event's values only: colours, logos, matrix texture, nav CTA colours, as `:root` variables. Don't put layout rules or new blocks in an event sheet. If an event needs something new, add it to `logi.css` behind a variable with a fallback (e.g. `var(--nav-last-btn-bg, var(--event-color-accent))`), then set the variable in the event sheet.
+- An event folder may also hold that event's `homepage.html`, kept in case it has a block the rebrand site doesn't. Before building a new block, check the event homepages for one that already exists, then bring it into `rebrand/homepage.html`.
 - A new LOGI event starts as a copy of `rebrand/1006033.css`.
 - `shell/style.css` is the CMS's shared shell, kept for reference. Don't edit it. Override it from `rebrand/logi.css`.
 

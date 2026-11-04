@@ -1,0 +1,55 @@
+/* 
+Site Name: LogiPharma Rebrand
+Office: UK
+Year: 2026
+URL: https://logipharmaeu.wbresearch.com/
+
+----------------------------------------------------------------*/
+:root {
+    --pallette: #8C80FF #4E28FF #FC3D79;
+
+    /* Event Colors */
+    --event-color-primary: #8C80FF !important;
+    --event-color-secondary: #4E28FF !important;
+    --event-color-accent: #FC3D79 !important;
+    --event-color-footer: var(--master-color-primary) !important;
+    --event-header-color: #01122D !important;
+
+    /* Logos - /UploadedFiles/EventPage/brands/logi/reff/logo */
+    --event-logo-knockout: url('/UploadedFiles/EventPage/brands/logi/reff/logo/white/logipharma-eu-white.svg') center center no-repeat;
+    --event-logo-color: url('/UploadedFiles/EventPage/brands/logi/reff/logo/color/logipharma-eu-color.svg') center center no-repeat;
+
+    /* Global Matrix SVG - The Dotted Texture used on the hero image, cta banners, footer */
+    --event-matrix: url('/UploadedFiles/EventPage/brands/logi/reff/matrix/logipharma-eu-matrix.svg');
+    /* Reduce the opacity of the svg on all of the cta banners - does not target hero or footer svgs. Lower this for readability */
+    --event-matrix-opacity: .5;
+
+    /* Hero Matrix Opacity - Reduce the opacity of the matrix dots on the hero per event*/
+    --hero-matrix-opacity: .75;
+
+    /* Homepage Hero Section */
+    --event-hero-gradient: linear-gradient(357.85deg, rgba(1, 18, 45, 0) 60.01%, var(--event-header-color) 91.93%), linear-gradient(165deg, rgba(1, 18, 45, 0) 60.01%, var(--event-header-color) 91.93%);
+
+    /* Inner Pages Hero Section  */
+    --event-inner-page-strip: var(--event-matrix), var(--master-color-primary);
+
+    /* Global */
+    --event-gradient-border: linear-gradient(var(--master-color-primary) 0 0) padding-box, linear-gradient(315deg, var(--event-color-accent) 22.05%, var(--event-header-color) 70.51%, var(--event-color-primary) 85.36%) border-box;
+    --event-image-gradient: linear-gradient(113.74deg, hsl(from var(--event-color-accent) h s l / 0%) 49.94%, hsl(from var(--event-color-accent) h s l / 40%) 98.98%);
+    --event-cta-image-border: linear-gradient(var(--master-color-primary) 0 0) padding-box, linear-gradient(315deg, var(--event-color-primary) 22.05%, var(--event-header-color) 70.51%, var(--event-color-primary) 85.36%) border-box;
+    --event-cta-hr: linear-gradient(90deg, var(--event-color-primary) 20%, var(--event-header-color) 50%, var(--event-color-accent) 80%);
+
+    /* Nav CTA colors: second-last-btn is the outlined button and last-btn is the solid button; uncomment any line to override the master default. */
+    --nav-second-last-btn-border: 0;
+    --nav-second-last-btn-bg: var(--event-color-accent);
+    /* --nav-second-last-btn-bg-hover: var(--event-color-secondary); */
+    --nav-second-last-btn-text: #fff;
+    /* --nav-second-last-btn-text-hover: #fff; */
+    --nav-last-btn-bg: var(--event-color-secondary);
+    --nav-last-btn-bg-hover: var(--event-color-primary);
+    /* --nav-last-btn-text: #fff; */
+    /* --nav-last-btn-text-hover: #fff; */
+}
+
+/* srs nav pill color */
+.iqpc-srs-nav-pills .nav-item button:hover {background: var(--event-color-primary) !important; color: #fff !important; border-color: var(--event-color-primary) !important;}

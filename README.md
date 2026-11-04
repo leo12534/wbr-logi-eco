@@ -4,20 +4,40 @@ Working copies of the LOGI brand's files in WBR's in-house CMS (ECO Admin). The 
 
 This isn't a standalone site. For the Bootstrap 5 portfolio version of LogiPharma EU, see [wbr-logipharma-eu-rebrand-2026](https://github.com/leo12534/wbr-logipharma-eu-rebrand-2026).
 
+## How the brand is built
+
+1. **The rebrand site builds the brand.** [logirebrand.wbresearch.com](https://logirebrand.wbresearch.com/) (event `1006033`) is where every change to `logi.css` and every new site-wide HTML block is made and tested.
+   LogiPharma EU was the first event rebranded, so the rebrand site still uses its colours, logos and matrix texture. That's why `1006033.css` looks like `1006035.css`.
+2. **Each event only sets its values.** A LOGI event such as LogiPharma EU loads the same `logi.css` and blocks. Its numbered sheet (`1006035.css`) sets that event's colours, logos, matrix texture and nav CTA colours as `:root` variables.
+
 ## Files
 
-| File | CMS location | Shared by |
-| --- | --- | --- |
-| `shell/style.css` | `/WBR/CSS/events/style.css` | Every ECO event. Reference only: it isn't edited in ECO Admin. |
-| `brands/logi/logi.css` | `/UploadedFiles/EventPage/brands/logi/logi.css` | Every LOGI event |
-| `events/1006035-logipharma-eu/1006035.css` | `/UploadedFiles/EventPage/1006035/1006035.css` | LogiPharma EU only |
-| `events/1006035-logipharma-eu/homepage.html` | Homepage content inside `#sb-page-content` | LogiPharma EU only |
+```
+wbr-logi-eco/
+├── rebrand/                   logirebrand.wbresearch.com, event 1006033
+│   ├── logi.css               brand sheet, loaded by every LOGI event
+│   ├── 1006033.css            the rebrand site's event sheet; starting point for a new event
+│   └── homepage.html          site-wide HTML blocks, as built on the rebrand site
+├── events/
+│   └── 1006035-logipharma-eu/
+│       └── 1006035.css        LogiPharma EU's values
+└── shell/
+    └── style.css              the CMS's shared shell; reference only
+```
 
-`homepage.html` was captured from the rendered live page, so it includes markup the CMS adds when it renders modules, such as speaker listings and sponsor logos.
+| File | CMS location |
+| --- | --- |
+| `rebrand/logi.css` | `/UploadedFiles/EventPage/brands/logi/logi.css` |
+| `rebrand/1006033.css` | `/UploadedFiles/EventPage/1006033/1006033.css` |
+| `rebrand/homepage.html` | Homepage content inside `#sb-page-content` on the rebrand site |
+| `events/<id>-<event>/<id>.css` | `/UploadedFiles/EventPage/<id>/<id>.css` |
+| `shell/style.css` | `/WBR/CSS/events/style.css` |
+
+`homepage.html` was captured from the rendered page, so it includes markup the CMS adds when it renders modules, such as speaker listings and sponsor logos.
 
 ## Adding a LOGI event
 
-Add a folder under `events/` named `<event id>-<event>`, e.g. `events/1006036-logipharma-us/`, with that event's `<id>.css`.
+Copy `rebrand/1006033.css` to `events/<id>-<event>/<id>.css`, e.g. `events/1006036-logipharma-us/1006036.css`, then change the colours, logos and other values for that event.
 
 ## Updating the CMS
 

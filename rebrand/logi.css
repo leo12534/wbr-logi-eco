@@ -524,7 +524,7 @@ srspricing
 ********************************/
 #pricing-v3 .iqpc-srs-packages .btn.dropdown-toggle {background-color: var(--event-color-primary); color: #fff !important;}
 #pricing-v3 .iqpc-srs-packages .btn.dropdown-toggle:hover {color: #fff !important;}
-#pricing-v3 .iqpc-srs-packages .dropdown-menu.quantity {text-shadow: none;}
+#pricing-v3 .iqpc-srs-packages .btn.dropdown-toggle, #pricing-v3 .iqpc-srs-packages .dropdown-menu.quantity {text-shadow: none;}
 
 /********************************
 Footer

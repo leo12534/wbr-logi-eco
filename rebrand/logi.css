@@ -522,8 +522,9 @@ body #sb-page-content .media .media-body :is(div, p, li) {font-size: 1.3rem; lin
 /********************************
 srspricing
 ********************************/
-#pricing-v3 .iqpc-srs-packages .btn.dropdown-toggle {background-color: var(--event-color-primary); color: #fff !important;}
-#pricing-v3 .iqpc-srs-packages .btn.dropdown-toggle:hover {color: #fff !important;}
+#pricing-v3 .iqpc-srs-packages .btn.dropdown-toggle {background-color: transparent; border: 1px solid #fff !important; color: #fff !important;}
+#pricing-v3 .iqpc-srs-packages .btn.dropdown-toggle:hover, #pricing-v3 .iqpc-srs-packages .btn.dropdown-toggle:focus, #pricing-v3 .iqpc-srs-packages .btn.dropdown-toggle.active {background-color: rgba(255, 255, 255, 0.15); border: 1px solid #fff !important; color: #fff !important; box-shadow: none;}
+#pricing-v3 .iqpc-srs-packages .dropdown-menu.quantity {text-shadow: none;}
 
 /********************************
 Footer

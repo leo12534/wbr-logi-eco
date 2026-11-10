@@ -69,73 +69,68 @@
                     </div>
                 </div>
             </div>
-            <style>
-.zone-cards .gradient-image::before { content: ""; z-index: 10; width: 100%; height: 100%; display: block; position: absolute; background: linear-gradient(0deg, hsl(from var(--master-color-primary) h s l / 92%) 0%, hsl(from var(--master-color-primary) h s l / 85%) 40%, rgba(255, 255, 255, 0) 80%);}
-.zone-cards::before,
-.zone-cards::after { position: absolute; content: ""; top: 0; z-index: 1; width: 150px; height: 105%; pointer-events: none;}
-.zone-cards::before {left: 0; background: linear-gradient(90deg, rgb(255 255 255 / 55%), rgb(255 255 255 / 45%), rgb(255 255 255 / 35%), rgb(255 255 255 / 25%), rgb(255 255 255 / 15%), rgb(255 255 255 / 0%));}
-.zone-cards::after { right: 0; background: linear-gradient(-90deg, rgb(255 255 255 / 55%), rgb(255 255 255 / 45%), rgb(255 255 255 / 35%), rgb(255 255 255 / 25%), rgb(255 255 255 / 15%), rgb(255 255 255 / 0%));}
-.zone-cards .card .card-content { position: absolute; bottom: 0; z-index: 10; padding: .75em;}
-.zone-cards .card .card-content p { font-size: .9rem;}
-.zone-cards .slick-slide .card .card-img-top { aspect-ratio: 1/1.5;}
-.zone-cards .slick-slide .card img { object-fit: cover;}
-.zone-cards .card-img-top { overflow: hidden;}
-@media (min-width: 992px) {
-.zone-cards .slick-slide .card .card-img-top { aspect-ratio: 1/1.8;}
-.zone-cards .card .card-content p { font-size: .8rem; max-height: 0; opacity: 0; overflow: hidden; transition: max-height .4s ease, opacity .3s ease;}
-.zone-cards .card .card-content .card-title { margin-bottom: 0 !important; transition: margin .3s ease;}
-.zone-cards .card:hover .card-content p { max-height: 30em; opacity: 1;}
-.zone-cards .card:hover .card-content .card-title { margin-bottom: .5rem !important;}
-.zone-cards .card:hover .gradient-image::before { background: linear-gradient(0deg, hsl(from var(--master-color-primary) h s l / 94%) 0%, hsl(from var(--master-color-primary) h s l / 88%) 70%, hsl(from var(--master-color-primary) h s l / 60%) 100%);}
-}
-            </style>
+    <style>
+        .gradient-image::before { content: ""; z-index: 10; width: 100%; height: 100%; display: block; position: absolute; background: linear-gradient(0deg, hsl(from var(--master-color-primary) h s l / 75%) 25%, rgba(255, 255, 255, 0) 100%);}
+.slick-gallery-cards::before,
+.slick-gallery-cards::after { position: absolute; content: ""; top: 0; z-index: 1; width: 150px; height: 105%; pointer-events: none;}
+.slick-gallery-cards::before {left: 0; background: linear-gradient(90deg, rgb(255 255 255 / 55%), rgb(255 255 255 / 45%), rgb(255 255 255 / 35%), rgb(255 255 255 / 25%), rgb(255 255 255 / 15%), rgb(255 255 255 / 0%));}
+.slick-gallery-cards::after { right: 0; background: linear-gradient(-90deg, rgb(255 255 255 / 55%), rgb(255 255 255 / 45%), rgb(255 255 255 / 35%), rgb(255 255 255 / 25%), rgb(255 255 255 / 15%), rgb(255 255 255 / 0%));}
+
+.slick-gallery-cards .card .card-content { position: absolute;bottom: 0; z-index: 10; padding: .4em;}
+.slick-gallery-cards .slick-slide .card .card-img-top {aspect-ratio:1/1.5;}
+.slick-gallery-cards .slick-slide .card img { object-fit:cover; }
+
+
+</style>
             <div class="row mt-3">
                 <div class="col-md-12 px-md-1">
                     <div class="d-flex justify-content-between align-items-end border-bottom border-event py-2 mb-4">
                         <h2 class="font-weight-light mb-0">Inside the LogiPharma Exhibition</h2>
-                        <div class="zone-arrows d-flex flex-shrink-0"></div>
+                        <div class="cards-arrows d-flex flex-shrink-0"></div>
                     </div>
                 </div>
             </div>
-            <script type="text/javascript">
-            $(document).ready(function() {
-                function zoneSlides() {
-                    var w = $('.zone-cards').width();
-                    return w >= 1150 ? 5 : w >= 700 ? 3 : w >= 500 ? 2 : 1;
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.slick-gallery-cards').slick({
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            pauseOnHover: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            arrows: true,
+            mobileFirst: true,
+            appendArrows: '.cards-arrows',
+            prevArrow: '<button type="button" class="gallery-arrow gallery-prev border-0" style="background:transparent;" aria-label="Previous"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="40px" viewBox="0 0 42 42"> <circle cx="21" cy="21" r="21" fill="var(--event-color-accent)" transform="rotate(-180 21 21)"></circle><path fill="#fff" stroke="#fff" stroke-width=".5" d="m20.2 27.5-.4-.2-6.6-6.4-.1-.4.1-.4 6.6-6.4a1 1 0 0 1 .9 0 1 1 0 0 1 0 .9l-5.5 5.3h14.5q.3 0 .5.2v.8l-.5.2H15.2l5.5 5.3a1 1 0 0 1 0 .9z"></path></svg>  </button>',
+            nextArrow: '<button type="button" class="gallery-arrow gallery-next border-0" style="background:transparent;" aria-label="Next" style="right: 0;"><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="40px" viewBox="0 0 42 42"><circle cx="21" cy="21" r="21" fill="var(--event-color-accent)"></circle><path fill="#fff" stroke="#fff" stroke-width=".5" d="m21.8 14.5.4.2 6.6 6.4.1.4-.1.4-6.6 6.4a1 1 0 0 1-.9 0 1 1 0 0 1 0-.9l5.5-5.3H12.3q-.3 0-.5-.2v-.8l.5-.2h14.5l-5.5-5.3a1 1 0 0 1 0-.9z"></path></svg></button>',
+            adaptiveHeight: true,
+            dots: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
                 }
-                var zoneTimer;
-                $(window).on('resize', function() {
-                    clearTimeout(zoneTimer);
-                    zoneTimer = setTimeout(function() {
-                        $('.zone-cards').slick('slickSetOption', 'slidesToShow', zoneSlides(), true);
-                    }, 200);
-                });
-                $('.zone-cards').slick({
-                    infinite: true,
-                    autoplay: true,
-                    autoplaySpeed: 5000,
-                    pauseOnHover: true,
-                    slidesToShow: zoneSlides(),
-                    slidesToScroll: 1,
-                    centerMode: true,
-                    arrows: true,
-                    mobileFirst: true,
-                    appendArrows: '.zone-arrows',
-                    prevArrow: '<button type="button" class="gallery-arrow gallery-prev border-0" style="background:transparent;" aria-label="Previous"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="40px" viewBox="0 0 42 42"> <circle cx="21" cy="21" r="21" fill="var(--event-color-accent)" transform="rotate(-180 21 21)"></circle><path fill="#fff" stroke="#fff" stroke-width=".5" d="m20.2 27.5-.4-.2-6.6-6.4-.1-.4.1-.4 6.6-6.4a1 1 0 0 1 .9 0 1 1 0 0 1 0 .9l-5.5 5.3h14.5q.3 0 .5.2v.8l-.5.2H15.2l5.5 5.3a1 1 0 0 1 0 .9z"></path></svg>  </button>',
-                    nextArrow: '<button type="button" class="gallery-arrow gallery-next border-0" style="background:transparent;" aria-label="Next"><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="40px" viewBox="0 0 42 42"><circle cx="21" cy="21" r="21" fill="var(--event-color-accent)"></circle><path fill="#fff" stroke="#fff" stroke-width=".5" d="m21.8 14.5.4.2 6.6 6.4.1.4-.1.4-6.6 6.4a1 1 0 0 1-.9 0 1 1 0 0 1 0-.9l5.5-5.3H12.3q-.3 0-.5-.2v-.8l.5-.2h14.5l-5.5-5.3a1 1 0 0 1 0-.9z"></path></svg></button>',
-                    adaptiveHeight: true,
-                    dots: false
-                });
-            });
-            </script>
-            <div class="row mb-5 zone-cards no-gutters">
+            }, {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+    });
+    </script>
+            <div class="row mb-5 slick-gallery-cards no-gutters">
                 <div class="col-md-4 px-0 mx-2">
                     <div class="card bg-transparent border-0 rounded px-0">
                         <div class="card-img-top rounded gradient-image position-relative px-0">
                             <img alt="LogiPharma Live! podcast stage" class="img-fluid mx-auto d-block rounded h-100 w-100" src="/UploadedFiles/EventPage/1006035/uploads/fun-stuff/logipharma-live.jpg">
-                            <div class="card-content">
+                            <div class="card-content ">
                                 <h4 class="card-title my-0 text-white lh-1 mb-2">LogiPharma Live!</h4>
-                                <p class="text-white font-weight-light lh-sm mb-0">Welcome to LogiPharma Live – your go-to space to sit back, connect, and tune in. This premium seating area is designed for relaxed networking and meaningful conversations, while also serving as the home of the LogiPharma Podcast. Catch live podcast recordings in action or listen to highlights from previous episodes playing throughout the event, creating the perfect blend of insight, community, and comfort.</p>
+                                <p class="text-white font-weight-light lh-sm">Welcome to LogiPharma Live – your go-to space to sit back, connect, and tune in. This premium seating area is designed for relaxed networking and meaningful conversations, while also serving as the home of the LogiPharma Podcast. Catch live podcast recordings in action or listen to highlights from previous episodes playing throughout the event, creating the perfect blend of insight, community, and comfort.</p>
                             </div>
                         </div>
                     </div>
@@ -144,9 +139,9 @@
                     <div class="card bg-transparent border-0 rounded px-0">
                         <div class="card-img-top rounded gradient-image position-relative px-0">
                             <img alt="LogiPharma Tasting Zone" class="img-fluid mx-auto d-block rounded h-100 w-100" src="/UploadedFiles/EventPage/1006035/uploads/fun-stuff/tasting-zone.jpg">
-                            <div class="card-content">
+                            <div class="card-content ">
                                 <h4 class="card-title my-0 text-white lh-1 mb-2">Tasting Zone</h4>
-                                <p class="text-white font-weight-light lh-sm mb-0">Swing by the LogiPharma Tasting Zone throughout lunches and networking breaks, where sponsors will host rotating tastings. From champagne and fine wines to local and craft beers, it’s open to everyone. A relaxed, social space designed for discovery, conversation, and a little indulgence between sessions.</p>
+                                <p class="text-white font-weight-light lh-sm">Swing by the LogiPharma Tasting Zone throughout lunches and networking breaks, where sponsors will host rotating tastings. From champagne and fine wines to local and craft beers, it’s open to everyone. A relaxed, social space designed for discovery, conversation, and a little indulgence between sessions.</p>
                             </div>
                         </div>
                     </div>
@@ -155,9 +150,9 @@
                     <div class="card bg-transparent border-0 rounded px-0">
                         <div class="card-img-top rounded gradient-image position-relative px-0">
                             <img alt="LogiPharma Innovation Zone" class="img-fluid mx-auto d-block rounded h-100 w-100" src="/UploadedFiles/EventPage/1006035/uploads/fun-stuff/innovation-zone.jpg">
-                            <div class="card-content">
+                            <div class="card-content ">
                                 <h4 class="card-title my-0 text-white lh-1 mb-2">Innovation Zone</h4>
-                                <p class="text-white font-weight-light lh-sm mb-0">Explore a broad spectrum of cutting-edge logistics and supply chain solutions. The Innovation Zone features demos covering everything from sustainable packaging solutions to fireproof warehouse technologies. Get a firsthand look at transformative ideas poised to reshape the future of your life sciences supply chain.</p>
+                                <p class="text-white font-weight-light lh-sm">Explore a broad spectrum of cutting-edge logistics and supply chain solutions. The Innovation Zone features demos covering everything from sustainable packaging solutions to fireproof warehouse technologies. Get a firsthand look at transformative ideas poised to reshape the future of your life sciences supply chain.</p>
                             </div>
                         </div>
                     </div>
@@ -166,9 +161,9 @@
                     <div class="card bg-transparent border-0 rounded px-0">
                         <div class="card-img-top rounded gradient-image position-relative px-0">
                             <img alt="LogiPharma AI Lab" class="img-fluid mx-auto d-block rounded h-100 w-100" src="/UploadedFiles/EventPage/1006035/uploads/fun-stuff/ai-lab.jpg">
-                            <div class="card-content">
+                            <div class="card-content ">
                                 <h4 class="card-title my-0 text-white lh-1 mb-2">AI Lab</h4>
-                                <p class="text-white font-weight-light lh-sm mb-0">Step into the AI Labs to experience the power of digital and AI-driven solutions revolutionizing logistics and supply chain management. From digitalisation infrastructure to intelligent agents, attend live demos showcasing ground-breaking tech to help you boost your efficiency, accuracy, and visibility.</p>
+                                <p class="text-white font-weight-light lh-sm">Step into the AI Labs to experience the power of digital and AI-driven solutions revolutionizing logistics and supply chain management. From digitalisation infrastructure to intelligent agents, attend live demos showcasing ground-breaking tech to help you boost your efficiency, accuracy, and visibility.</p>
                             </div>
                         </div>
                     </div>
@@ -177,9 +172,9 @@
                     <div class="card bg-transparent border-0 rounded px-0">
                         <div class="card-img-top rounded gradient-image position-relative px-0">
                             <img alt="Women in Pharma networking" class="img-fluid mx-auto d-block rounded h-100 w-100" src="/UploadedFiles/EventPage/1006035/uploads/fun-stuff/women-in-pharma.jpg">
-                            <div class="card-content">
+                            <div class="card-content ">
                                 <h4 class="card-title my-0 text-white lh-1 mb-2">Women in Pharma</h4>
-                                <p class="text-white font-weight-light lh-sm mb-0">A dedicated space to bring together inspiring women from across the global pharmaceutical, biotech and medtech supply chain to connect, collaborate, share experiences and build meaningful relationships.</p>
+                                <p class="text-white font-weight-light lh-sm">A dedicated space to bring together inspiring women from across the global pharmaceutical, biotech and medtech supply chain to connect, collaborate, share experiences and build meaningful relationships.</p>
                             </div>
                         </div>
                     </div>
@@ -188,9 +183,9 @@
                     <div class="card bg-transparent border-0 rounded px-0">
                         <div class="card-img-top rounded gradient-image position-relative px-0">
                             <img alt="Air Cargo Zone" class="img-fluid mx-auto d-block rounded h-100 w-100" src="/UploadedFiles/EventPage/1006035/uploads/fun-stuff/air-cargo-zone.jpg">
-                            <div class="card-content">
+                            <div class="card-content ">
                                 <h4 class="card-title my-0 text-white lh-1 mb-2">Air Cargo Zone</h4>
-                                <p class="text-white font-weight-light lh-sm mb-0">Experience a taste of first class in our Air Cargo Zone. Relax and connect with fellow attendees in the premium lounge, take the controls in our flight simulator, or explore new flavours in the tasting zone—all between conference sessions.</p>
+                                <p class="text-white font-weight-light lh-sm">Experience a taste of first class in our Air Cargo Zone. Relax and connect with fellow attendees in the premium lounge, take the controls in our flight simulator, or explore new flavours in the tasting zone—all between conference sessions.</p>
                             </div>
                         </div>
                     </div>
@@ -199,9 +194,9 @@
                     <div class="card bg-transparent border-0 rounded px-0">
                         <div class="card-img-top rounded gradient-image position-relative px-0">
                             <img alt="Wellness Zone" class="img-fluid mx-auto d-block rounded h-100 w-100" src="/UploadedFiles/EventPage/1006035/uploads/fun-stuff/wellness-zone.jpg">
-                            <div class="card-content">
+                            <div class="card-content ">
                                 <h4 class="card-title my-0 text-white lh-1 mb-2">Wellness Zone</h4>
-                                <p class="text-white font-weight-light lh-sm mb-0">Take a moment to recharge between sessions. Visit our Wellness Zone to unwind with a relaxing massage and enjoy a fresh immunity juice shot, leaving you refreshed and ready for the rest of the day.</p>
+                                <p class="text-white font-weight-light lh-sm">Take a moment to recharge between sessions. Visit our Wellness Zone to unwind with a relaxing massage and enjoy a fresh immunity juice shot, leaving you refreshed and ready for the rest of the day.</p>
                             </div>
                         </div>
                     </div>
@@ -210,9 +205,9 @@
                     <div class="card bg-transparent border-0 rounded px-0">
                         <div class="card-img-top rounded gradient-image position-relative px-0">
                             <img alt="LinkedIn Headshot Zone" class="img-fluid mx-auto d-block rounded h-100 w-100" src="/UploadedFiles/EventPage/1006035/uploads/fun-stuff/linkedin-headshot-zone.jpg">
-                            <div class="card-content">
+                            <div class="card-content ">
                                 <h4 class="card-title my-0 text-white lh-1 mb-2">LinkedIn Headshot Zone</h4>
-                                <p class="text-white font-weight-light lh-sm mb-0">Give your professional profile a refresh! Visit our LinkedIn Headshot Zone for a professional photograph to help you make a great first impression. Take a moment between sessions to step in front of the camera and capture a fresh headshot for LinkedIn and beyond.</p>
+                                <p class="text-white font-weight-light lh-sm">Give your professional profile a refresh! Visit our LinkedIn Headshot Zone for a professional photograph to help you make a great first impression. Take a moment between sessions to step in front of the camera and capture a fresh headshot for LinkedIn and beyond.</p>
                             </div>
                         </div>
                     </div>
@@ -221,9 +216,9 @@
                     <div class="card bg-transparent border-0 rounded px-0">
                         <div class="card-img-top rounded gradient-image position-relative px-0">
                             <img alt="LogiPharma Start-Up Village" class="img-fluid mx-auto d-block rounded h-100 w-100" src="/UploadedFiles/EventPage/1006035/uploads/fun-stuff/start-up-village.jpg">
-                            <div class="card-content">
+                            <div class="card-content ">
                                 <h4 class="card-title my-0 text-white lh-1 mb-2">Start-Up Village</h4>
-                                <p class="text-white font-weight-light lh-sm mb-0">Discover fresh ideas and meet the emerging companies bringing new perspectives to the industry. Explore our Start-Up Village to connect with the founders, see their solutions and find inspiration for your next big move.</p>
+                                <p class="text-white font-weight-light lh-sm">Discover fresh ideas and meet the emerging companies bringing new perspectives to the industry. Explore our Start-Up Village to connect with the founders, see their solutions and find inspiration for your next big move.</p>
                             </div>
                         </div>
                     </div>
@@ -232,9 +227,9 @@
                     <div class="card bg-transparent border-0 rounded px-0">
                         <div class="card-img-top rounded gradient-image position-relative px-0">
                             <img alt="Italian Food Zone sponsored by Chiggiato Spa" class="img-fluid mx-auto d-block rounded h-100 w-100" src="/UploadedFiles/EventPage/1006035/uploads/fun-stuff/italian-food-zone.jpg">
-                            <div class="card-content">
+                            <div class="card-content ">
                                 <h4 class="card-title my-0 text-white lh-1 mb-2">Italian Food Zone – Sponsored by Chiggiato Spa</h4>
-                                <p class="text-white font-weight-light lh-sm mb-0">Enjoy a taste of Italy in our Italian Food Zone, sponsored by Chiggiato Spa. Savour pizza and pasta, sip an Aperol Spritz and connect with fellow attendees in a relaxed, welcoming setting—the perfect spot to take a break between sessions.</p>
+                                <p class="text-white font-weight-light lh-sm">Enjoy a taste of Italy in our Italian Food Zone, sponsored by Chiggiato Spa. Savour pizza and pasta, sip an Aperol Spritz and connect with fellow attendees in a relaxed, welcoming setting—the perfect spot to take a break between sessions.</p>
                             </div>
                         </div>
                     </div>
@@ -243,9 +238,9 @@
                     <div class="card bg-transparent border-0 rounded px-0">
                         <div class="card-img-top rounded gradient-image position-relative px-0">
                             <img alt="Swedish Deli sponsored by Envirotainer" class="img-fluid mx-auto d-block rounded h-100 w-100" src="/UploadedFiles/EventPage/1006035/uploads/fun-stuff/swedish-deli.jpg">
-                            <div class="card-content">
+                            <div class="card-content ">
                                 <h4 class="card-title my-0 text-white lh-1 mb-2">Swedish Deli – Sponsored by Envirotainer</h4>
-                                <p class="text-white font-weight-light lh-sm mb-0">Discover a taste of Sweden at our Swedish Deli, sponsored by Envirotainer. Enjoy traditional Swedish cuisine inspired by the company’s home country, and connect with fellow attendees over a taste of Nordic hospitality.</p>
+                                <p class="text-white font-weight-light lh-sm">Discover a taste of Sweden at our Swedish Deli, sponsored by Envirotainer. Enjoy traditional Swedish cuisine inspired by the company’s home country, and connect with fellow attendees over a taste of Nordic hospitality.</p>
                             </div>
                         </div>
                     </div>

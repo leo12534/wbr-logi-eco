@@ -79,6 +79,15 @@
 .zone-cards .card .card-content p { font-size: .9rem;}
 .zone-cards .slick-slide .card .card-img-top { aspect-ratio: 1/1.5;}
 .zone-cards .slick-slide .card img { object-fit: cover;}
+.zone-cards .card-img-top { overflow: hidden;}
+@media (min-width: 992px) {
+.zone-cards .slick-slide .card .card-img-top { aspect-ratio: 1/1.8;}
+.zone-cards .card .card-content p { font-size: .8rem; max-height: 0; opacity: 0; overflow: hidden; transition: max-height .4s ease, opacity .3s ease;}
+.zone-cards .card .card-content .card-title { margin-bottom: 0 !important; transition: margin .3s ease;}
+.zone-cards .card:hover .card-content p { max-height: 30em; opacity: 1;}
+.zone-cards .card:hover .card-content .card-title { margin-bottom: .5rem !important;}
+.zone-cards .card:hover .gradient-image::before { background: linear-gradient(0deg, hsl(from var(--master-color-primary) h s l / 94%) 0%, hsl(from var(--master-color-primary) h s l / 88%) 70%, hsl(from var(--master-color-primary) h s l / 60%) 100%);}
+}
             </style>
             <div class="row mt-3">
                 <div class="col-md-12 px-md-1">
@@ -90,12 +99,23 @@
             </div>
             <script type="text/javascript">
             $(document).ready(function() {
+                function zoneSlides() {
+                    var w = $('.zone-cards').width();
+                    return w >= 1150 ? 5 : w >= 700 ? 3 : w >= 500 ? 2 : 1;
+                }
+                var zoneTimer;
+                $(window).on('resize', function() {
+                    clearTimeout(zoneTimer);
+                    zoneTimer = setTimeout(function() {
+                        $('.zone-cards').slick('slickSetOption', 'slidesToShow', zoneSlides(), true);
+                    }, 200);
+                });
                 $('.zone-cards').slick({
                     infinite: true,
                     autoplay: true,
                     autoplaySpeed: 5000,
                     pauseOnHover: true,
-                    slidesToShow: 1,
+                    slidesToShow: zoneSlides(),
                     slidesToScroll: 1,
                     centerMode: true,
                     arrows: true,
@@ -104,20 +124,7 @@
                     prevArrow: '<button type="button" class="gallery-arrow gallery-prev border-0" style="background:transparent;" aria-label="Previous"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="40px" viewBox="0 0 42 42"> <circle cx="21" cy="21" r="21" fill="var(--event-color-accent)" transform="rotate(-180 21 21)"></circle><path fill="#fff" stroke="#fff" stroke-width=".5" d="m20.2 27.5-.4-.2-6.6-6.4-.1-.4.1-.4 6.6-6.4a1 1 0 0 1 .9 0 1 1 0 0 1 0 .9l-5.5 5.3h14.5q.3 0 .5.2v.8l-.5.2H15.2l5.5 5.3a1 1 0 0 1 0 .9z"></path></svg>  </button>',
                     nextArrow: '<button type="button" class="gallery-arrow gallery-next border-0" style="background:transparent;" aria-label="Next"><svg xmlns="http://www.w3.org/2000/svg" fill="none" width="40px" viewBox="0 0 42 42"><circle cx="21" cy="21" r="21" fill="var(--event-color-accent)"></circle><path fill="#fff" stroke="#fff" stroke-width=".5" d="m21.8 14.5.4.2 6.6 6.4.1.4-.1.4-6.6 6.4a1 1 0 0 1-.9 0 1 1 0 0 1 0-.9l5.5-5.3H12.3q-.3 0-.5-.2v-.8l.5-.2h14.5l-5.5-5.3a1 1 0 0 1 0-.9z"></path></svg></button>',
                     adaptiveHeight: true,
-                    dots: false,
-                    responsive: [{
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    }, {
-                        breakpoint: 1200,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 1
-                        }
-                    }]
+                    dots: false
                 });
             });
             </script>
